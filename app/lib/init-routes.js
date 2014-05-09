@@ -24,6 +24,7 @@ function load(app, fn){
   app.get('/albums/new', dbg, albums.new);
   app.get('/artists', dbg, artists.index);
   app.get('/artists/new', dbg, artists.new);
+  app.post('/artists', dbg, artists.create);
   app.get('/songs', dbg, songs.index);
   app.get('/songs/new', dbg, songs.new);
   console.log('Routes Loaded');

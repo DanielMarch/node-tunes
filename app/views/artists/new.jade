@@ -3,6 +3,6 @@ extends ../shared/template
 block content
   h1 New Artist
   form(method='POST', action='/artists', enctype='multipart/form-data')
-    input(type='text', name='title', placeholder='New Artist Name')
+    input(type='text', name='name', placeholder='New Artist Name')
     input(type='file', name='photo', multiple=false)
     button New Artist
