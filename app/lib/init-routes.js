@@ -22,6 +22,7 @@ function load(app, fn){
   app.get('/', dbg, home.index);
   app.get('/albums', dbg, albums.index);
   app.get('/albums/new', dbg, albums.new);
+  app.post('/albums', dbg, albums.create);
   app.get('/artists', dbg, artists.index);
   app.get('/artists/new', dbg, artists.new);
   app.post('/artists', dbg, artists.create);

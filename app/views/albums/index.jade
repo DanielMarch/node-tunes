@@ -2,4 +2,14 @@ extends ../shared/template
 
 block content
   h1 Albums
-  a(href='/albums/new') New Album 
+  a(href='/albums/new') New Album
+
+  table
+    thead
+      th album Name
+      th Photo
+    tbody
+      each album in albums
+        tr
+          td= album.name
+          td= album.photo
