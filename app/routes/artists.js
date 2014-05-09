@@ -2,6 +2,7 @@
 
 var multiparty = require('multiparty');
 var artists = global.nss.db.collection('artists');
+var fs = require('fs');
 
 exports.index = (req, res)=>{
   artists.find().toArray((err, records)=>{
@@ -19,7 +20,11 @@ exports.create = (req, res)=>{
   form.parse(req, (err, field, file)=>{
     var artist = {};
     artist.name = field.name[0];
-    artist.photo = file.photo[0].originalFilename;
+    artist.photo = [];
+    file.photo.forEach(p=>{
+      fs.renameSync(p.path, `${__dirname}/../static/img/${p.originalFilename}` );
+      artist.photo.push(p.originalFilename);
+    });
     artists.save(artist, ()=>res.redirect('/artists'));
   });
 };
