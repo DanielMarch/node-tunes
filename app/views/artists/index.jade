@@ -3,3 +3,13 @@ extends ../shared/template
 block content
   h1 Artists
   a(href='/artists/new') New Artist
+
+  table
+    thead
+      th Artist Name
+      th Photo
+    tbody
+      each artist in artists
+        tr
+          td= artist.name
+          td= artist.photo

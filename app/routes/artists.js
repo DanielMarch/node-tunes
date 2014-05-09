@@ -4,7 +4,9 @@ var multiparty = require('multiparty');
 var artists = global.nss.db.collection('artists');
 
 exports.index = (req, res)=>{
-  res.render('artists/index', {title: 'Artists'});
+  artists.find().toArray((err, records)=>{
+    res.render('artists/index', {artists: records, title: 'Artists'});
+  });
 };
 
 exports.new = (req, res)=>{
