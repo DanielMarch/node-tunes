@@ -1,15 +1,15 @@
 extends ../shared/template
 
 block content
-  h1 albums
+  h1 Albums
   a(href='/albums/new') New album
 
   table
     thead
-      th album Name
+      th Album Name
       th Photo
     tbody
       each album in albums
         tr
           td= album.name
-          td: img(src='/img/#{album.photo}')
+          td: img(src='/img/#{album.name}/#{album.photo}')

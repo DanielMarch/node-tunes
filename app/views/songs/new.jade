@@ -2,3 +2,13 @@ extends ../shared/template
 
 block content
   h1 New Songs
+
+  //- form(method='POST', action='/music', enctype='multipart/form-data')
+  //-   input(type='text', name='name', placeholder='New Song Name')
+  //-   input(type='file', name='music', multiple=false)
+  //-   select(name='albums')
+  //-     each album in albums
+  //-       option(value=album._id)= album.name
+  //-   select(name='artists')
+  //-     each artist in artists
+  //-       option(value=artist._id)= artist.name
