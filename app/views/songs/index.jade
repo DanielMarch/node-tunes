@@ -6,16 +6,26 @@ block content
 
   table
     thead
+      th Play
       th Song Name
       th Genre
       th Album
       th Artist
-      th Play
     tbody
       each song in songs
         tr
+          td: audio(src='/audios/#{song.name}/#{song.song}', type='audio/mp3', controls=true)
           td= song.name
           td= song.genre
           td= song.albumID
           td= song.artistID
-          td= song.song
+  //-
+  //- .song
+  //-   each song in songs
+  //-     .songfile
+  //-     .songname= song.name
+  //-     .songenre= song.genre
+  //-   each album in albums
+  //-     .albumname= album.name
+  //-   each artist in artists
+  //-     .artistname= artist.name
