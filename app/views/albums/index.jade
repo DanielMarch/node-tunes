@@ -4,12 +4,7 @@ block content
   h1 Albums
   a(href='/albums/new') New album
 
-  table
-    thead
-      th Album Name
-      th Photo
-    tbody
-      each album in albums
-        tr
-          td= album.name
-          td: img(src='/img/#{album.name}/#{album.photo}')
+  each album in albums
+    .albums
+      .albumart: img(src='/img/#{album.name}/#{album.photo}')
+      .albumname= album.name

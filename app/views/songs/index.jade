@@ -3,3 +3,19 @@ extends ../shared/template
 block content
   h1 Songs
   a(href='/songs/new') New Song
+
+  table
+    thead
+      th Song Name
+      th Genre
+      th Album
+      th Artist
+      th Play
+    tbody
+      each song in songs
+        tr
+          td= song.name
+          td= song.genre
+          td= song.albumID
+          td= song.artistID
+          td= song.song

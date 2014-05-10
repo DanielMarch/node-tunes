@@ -4,12 +4,7 @@ block content
   h1 Artists
   a(href='/artists/new') New Artist
 
-  table
-    thead
-      th Artist Name
-      th Photo
-    tbody
-      each artist in artists
-        tr
-          td= artist.name
-          td: img(src='/img/#{artist.name}/#{artist.photo}')
+  each artist in artists
+    .artists
+      .artistart: img(src='/img/#{artist.name}/#{artist.photo}')
+      .artistname= artist.name

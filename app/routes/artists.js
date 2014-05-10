@@ -22,8 +22,6 @@ exports.create = (req, res)=>{
     var artist = {};
     artist.name = field.name[0];
     artist.photo = file.photo[0].originalFilename;
-    console.log(file);
-
     mkdirp(`${__dirname}/../static/img/${artist.name}`, function(err) {
       fs.renameSync(file.photo[0].path,`${__dirname}/../static/img/${artist.name}/${artist.photo}`);
     });
