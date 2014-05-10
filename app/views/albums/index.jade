@@ -1,9 +1,9 @@
 extends ../shared/template
 
 block content
-  h1 Albums
-  a(href='/albums/new') New album
-
+  h1.bannertwo Albums
+  a.newbutt.button.button-rounded(href='/albums/new') New Album
+  br
   each album in albums
     .albums
       .albumart: img(src='/img/#{album.name}/#{album.photo}')

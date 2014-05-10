@@ -1,9 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+body{
+  font-family: 'Varela Round', sans-serif;
+}
+
 #nav{
   position:fixed;
   top:0;
   height:50px;
   width:100%;
-  background-color:green;
+  background-color:rgba(255,255,255,0.3);
   ul{
     text-align:center;
     li{
@@ -11,7 +17,10 @@
       margin: 0 5%;
       a{
         text-decoration:none;
-        color:inherit;
+        color:black;
+      }
+      a:active{
+        color: red;
       }
     }
   }
@@ -24,4 +33,117 @@ img{
 
 #guard{
   height:50px;
+}
+
+table{
+  margin-top: 30px;
+  margin-left: 15%;
+  color: rgb(200,200,200);
+  background-color:rgba(255,255,255,0.3);
+}
+
+th{
+  padding-top: 5px;
+}
+
+td{
+  padding: 20px;
+}
+
+a{
+  text-decoration:none;
+  padding: 5px;
+}
+
+a:hover{
+  border-radius: 5px;
+  background-color: grey;
+}
+
+a:active{
+  color: red;
+}
+
+.banner{
+  font-size: 80px;
+  color: white;
+  text-align: center;
+}
+
+.bannertwo{
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.artists, .albums{
+  float: left;
+  margin-top: 19px;
+  margin-right: 19px;
+  margin-bottom: 0px;
+  margin-left: 19px;
+  border: 1px solid white;
+}
+
+.artists:hover, .albums:hover{
+  opacity: 0.5;
+}
+
+.newbutt{
+  margin-left: 20px;
+}
+
+.albumart, .artistart{
+  height: 200px;
+  width: 200px;
+}
+
+.albumname, .artistname{
+  text-align: center;
+  background-color:rgba(255,255,255,0.4);
+  margin-top: 0px;
+  color: rgb(25,25,25);
+}
+
+.songlink{
+  text-decoration: none;
+  color: black;
+  padding: 0px;
+  border: none;
+}
+
+.songlink:hover{
+  background: none;
+  color: red;
+}
+
+.form{
+  margin-top: 40px;
+  margin-left: 20px;
+  background-color:rgba(255,255,255,0.4);
+  border: 1px solid white;
+  width: 665px;
+}
+
+.form2{
+  margin-top: 40px;
+  margin-left: 20px;
+  background-color:rgba(255,255,255,0.4);
+  border: 1px solid white;
+  width: 410px;
+}
+
+input{
+  margin: 5px;
+  display: inline;
+}
+
+select{
+  margin: 5px;
+  display: inline;
+}
+
+.addsong{
+  margin-left: 315px;
+  margin-bottom: 5px;
 }

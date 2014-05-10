@@ -1,16 +1,19 @@
 extends ../shared/template
 
 block content
-  h1 Songs
-  a(href='/songs/new') New Song
-
+  h1.bannertwo Songs
+  a.newbutt.button.button-rounded(href='/songs/new') New Song
   table
     thead
       th Play
-      th Song Name
-      th Genre
-      th Album
-      th Artist
+      th
+        a.songlink(href='#') Song Name
+      th
+        a.songlink(href='#') Genre
+      th
+        a.songlink(href='#') Album
+      th
+        a.songlink(href='#') Artist
     tbody
       each song in songs
         tr
@@ -19,13 +22,3 @@ block content
           td= song.genre
           td= song.albumID
           td= song.artistID
-  //-
-  //- .song
-  //-   each song in songs
-  //-     .songfile
-  //-     .songname= song.name
-  //-     .songenre= song.genre
-  //-   each album in albums
-  //-     .albumname= album.name
-  //-   each artist in artists
-  //-     .artistname= artist.name

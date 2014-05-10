@@ -1,9 +1,9 @@
 extends ../shared/template
 
 block content
-  h1 Artists
-  a(href='/artists/new') New Artist
-
+  h1.bannertwo Artists
+  a.newbutt.button.button-rounded(href='/artists/new') New Artist
+  br
   each artist in artists
     .artists
       .artistart: img(src='/img/#{artist.name}/#{artist.photo}')

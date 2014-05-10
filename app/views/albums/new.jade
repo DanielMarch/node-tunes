@@ -1,8 +1,8 @@
 extends ../shared/template
 
 block content
-  h1 New Album
-  form(method='POST', action='/albums', enctype='multipart/form-data')
+  h1.bannertwo New Album
+  form.form(method='POST', action='/albums', enctype='multipart/form-data')
     input(type='text', name='name', placeholder='New Album Name')
     input(type='file', name='photo', multiple=false)
-    button New Album
+    button.addstuff New Album
