@@ -5,6 +5,6 @@ block content
   a.newbutt.button.button-rounded(href='/albums/new') New Album
   br
   each album in albums
-    .albums
+    a.albums(href='#')
       .albumart: img(src='/img/#{album.name}/#{album.photo}')
       .albumname= album.name
