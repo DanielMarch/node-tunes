@@ -3,7 +3,9 @@
 var multiparty = require('multiparty');
 var albums = global.nss.db.collection('albums');
 var fs = require('fs');
+var _ = require('lodash');
 var mkdirp = require('mkdirp');
+var Mongo = require('mongodb');
 
 exports.index = (req, res)=>{
   albums.find().toArray((err, records)=>{
@@ -26,5 +28,16 @@ exports.create = (req, res)=>{
       fs.renameSync(file.photo[0].path,`${__dirname}/../static/img/${album.name}/${album.photo}`);
     });
     albums.save(album, ()=>res.redirect('/albums'));
+  });
+};
+
+exports.show = (req, res)=>{
+  var _id = Mongo.ObjectID(req.params.id);
+  var songs = global.nss.db.collection('songs');
+  albums.find({_id:_id}).toArray((err, alb)=>{
+      songs.find().toArray((e, sngs)=>{
+        var sl = _.filter(sngs, function(sng) { return sng.albumID.toString() === alb[0]._id.toString(); });
+      res.render('albums/show', {songs: sl, albums: alb, title: 'Songs'});
+    });
   });
 };

@@ -33,6 +33,9 @@ function load(app, fn){
   app.get('/songs/new', dbg, songs.new);
   app.post('/songs', dbg, songs.create);
 
+  app.get('/albums/:id', dbg, albums.show);
+  app.get('/artists/:id', dbg, artists.show);
+
   console.log('Routes Loaded');
   fn();
 }

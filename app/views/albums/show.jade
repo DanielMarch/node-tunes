@@ -1,0 +1,15 @@
+extends ../shared/template
+
+block content
+  h1.bannertwo= albums[0].name
+  each album in albums
+    .thumbnail: img(src='/img/#{album.name}/#{album.photo}')
+  table.table2
+    thead
+      th Play
+      th Song Name
+    tbody
+      each song in songs
+        tr
+          td: audio(src='/audios/#{song.name}/#{song.song}', type='audio/mp3', controls=true)
+          td= song.name

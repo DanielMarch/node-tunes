@@ -7,12 +7,12 @@ block content
     input(type='text', name='name', placeholder='New Song Name')
     input(type='text', name='genre', placeholder='Genre')
     select(name='albums')
-      each album in albums
-        option(value='') Select Album
-        option(value=album._id)= album.name
+      option(value='') Select Album
+        each album in albums
+          option(value=album._id)= album.name
     select(name='artists')
-      each artist in artists
-        option(value='') Select Artist
-        option(value=artist._id)= artist.name
+      option(value='') Select Artist  
+        each artist in artists
+          option(value=artist._id)= artist.name
     input(type='file', name='music', multiple=false)
     button.addsong Add Song

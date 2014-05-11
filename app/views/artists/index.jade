@@ -5,6 +5,6 @@ block content
   a.newbutt.button.button-rounded(href='/artists/new') New Artist
   br
   each artist in artists
-    a.artists(href='#')
+    a.artists(href='/artists/#{artist._id}')
       .artistart: img(src='/img/#{artist.name}/#{artist.photo}')
       .artistname= artist.name
