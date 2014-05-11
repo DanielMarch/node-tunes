@@ -19,7 +19,6 @@ exports.new = (req, res)=>{
 
 exports.create = (req, res)=>{
   var form = new multiparty.Form();
-
   form.parse(req, (err, field, file)=>{
     var album = {};
     album.name = field.name[0];

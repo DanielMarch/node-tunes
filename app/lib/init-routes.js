@@ -31,6 +31,10 @@ function load(app, fn){
 
   app.get('/songs', dbg, songs.index);
   app.get('/songs/new', dbg, songs.new);
+  app.get('/songs/sort/name', dbg, songs.namesort);
+  app.get('/songs/sort/genre', dbg, songs.genresort);
+  app.get('/songs/sort/artistId', dbg, songs.artistsort);
+  app.get('/songs/sort/albumId', dbg, songs.albumsort);
   app.post('/songs', dbg, songs.create);
 
   app.get('/albums/:id', dbg, albums.show);

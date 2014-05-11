@@ -9,7 +9,6 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 
 exports.index = (req, res)=>{
-
   songs.find().toArray((err, songs)=>{
     artists.find().toArray((err, artistsRecords)=>{
       albums.find().toArray((err, albumsRecords)=>{
@@ -20,7 +19,7 @@ exports.index = (req, res)=>{
           song.album = album;
           return song;
        });
-        res.render('songs/index', {songs: songsRecords, artists: artistsRecords, albums: albumsRecords});
+        res.render('songs/index', {songs: songsRecords, artists: artistsRecords, albums: albumsRecords, title: 'Song List'});
       });
     });
   });
@@ -60,5 +59,64 @@ exports.create = (req, res)=>{
       fs.renameSync(file.music[0].path,`${__dirname}/../static/audios/${song.name}/${song.song}`);
     });
     songs.save(song, ()=>res.redirect('/songs'));
+  });
+};
+
+exports.namesort = (req, res)=>{
+  songs.find({}, {sort:[['name', -1]]}).toArray((e, s)=>{
+    albums.find().toArray((e, alb)=>{
+      artists.find().toArray((e, art)=>{
+        s = s.map(song => {
+          console.log('*********************************');
+          console.log(s);
+          console.log(song);
+          return song;
+        });
+        res.render('songs/index', {albums: alb, artists: art, songs: s, title: 'Song List'});
+      });
+    });
+  });
+};
+
+exports.genresort = (req, res)=>{
+  songs.find({}, {sort:[['genre', -1]]}).toArray((e, s)=>{
+    albums.find().toArray((e, alb)=>{
+      artists.find().toArray((e, art)=>{
+        s = s.map(song => {
+          console.log('*********************************');
+          console.log(s);
+          console.log(song);
+        });
+      });
+    });
+  });
+};
+
+exports.artistsort = (req, res)=>{
+  songs.find({}, {sort:[['artistID', -1]]}).toArray((e, s)=>{
+    albums.find().toArray((e, alb)=>{
+      artists.find().toArray((e, art)=>{
+        s = s.map(song => {
+          console.log('*********************************');
+          console.log(s);
+          console.log(song);
+        });
+      });
+    });
+  });
+};
+
+exports.albumsort = (req, res)=>{
+  songs.find({}, {sort:[['albumID', -1]]}).toArray((e, s)=>{
+    albums.find().toArray((e, alb)=>{
+      artists.find().toArray((e, art)=>{
+        s = s.map(song => {
+          console.log('*********************************');
+          console.log(s);
+          console.log('*********************************');
+          console.log(song);
+        });
+      });
+    });
   });
 };
