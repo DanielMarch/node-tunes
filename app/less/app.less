@@ -37,7 +37,7 @@ img{
 
 table{
   margin-top: 30px;
-  margin-left: 15%;
+  margin-left: 18%;
   color: rgb(200,200,200);
   background-color:rgba(255,255,255,0.3);
 }
@@ -64,10 +64,46 @@ a.nav:active{
   color: red;
 }
 
+// .banner{
+//   font-size: 80px;
+//   color: white;
+//   text-align: center;
+// }
+
 .banner{
-  font-size: 80px;
-  color: white;
-  text-align: center;
+    font-size: 80px;
+    text-align: center;
+    -webkit-animation: color-change 8s infinite;
+    -moz-animation: color-change 8s infinite;
+    -o-animation: color-change 8s infinite;
+    -ms-animation: color-change 8s infinite;
+    animation: color-change 8s infinite;
+}
+
+@-webkit-keyframes color-change {
+    0% { color: white; }
+    50% { color: rgb(145,43,24); }
+    100% { color: white; }
+}
+@-moz-keyframes color-change {
+    0% { color: white; }
+    50% { color: rgb(145,43,24); }
+    100% { color: white; }
+}
+@-ms-keyframes color-change {
+    0% { color: white; }
+    50% { color: rgb(145,43,24); }
+    100% { color: white; }
+}
+@-o-keyframes color-change {
+    0% { color: white; }
+    50% { color: rgb(145,43,24); }
+    100% { color: white; }
+}
+@keyframes color-change {
+    0% { color: white; }
+    50% { color: rgb(145,43,24); }
+    100% { color: white; }
 }
 
 .bannertwo{
@@ -147,4 +183,28 @@ select{
 .addsong{
   margin-left: 315px;
   margin-bottom: 5px;
+}
+
+.logo1{
+  margin-left: 100px;
+  float: left;
+  height: 520px;
+  width: 520px;
+  border-radius: 50%;
+  background:url(/img/nodejs.png) no-repeat center;
+  background-color: rgba(100,100,100,0.9);
+}
+
+.logo2{
+  margin-right: 100px;
+  float: right;
+  height: 520px;
+  width: 520px;
+  border-radius: 50%;
+  background:url(/img/mongodb.png) no-repeat center;
+  background-color: rgba(100,100,100,0.9);
+}
+
+.logo1:hover, .logo2:hover{
+  background-color: rgba(50,50,50,0.9);
 }

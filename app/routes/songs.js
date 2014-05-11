@@ -9,20 +9,18 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 
 exports.index = (req, res)=>{
-  songs.find().toArray((err, records)=>{
+
+  songs.find().toArray((err, songs)=>{
     artists.find().toArray((err, artistsRecords)=>{
       albums.find().toArray((err, albumsRecords)=>{
-        records = records.map(album=>{
-          var songAlbum = _(records).find(album=> album.albumID.toString() === album.albumID);
-          album.albumID = songAlbum;
-          return album;
-        });
-        records = records.map(artist=>{
-          var songArtist = _(records).find(artist=> artist.artistID.toString() === artist.artistID);
-          artist.artistID = songArtist;
-          return artist;
-        });
-        res.render('songs/index', {songs: records, artists: artistsRecords, albums: albumsRecords, title: 'Songs'});
+        var songsRecords = songs.map(song=>{
+          var artist = _(artistsRecords).find(artist => artist._id.toString() === song.artistID);
+          song.artist = artist;
+          var album = _(albumsRecords).find(album=> album._id.toString() === song.albumID);
+          song.album = album;
+          return song;
+       });
+        res.render('songs/index', {songs: songsRecords, artists: artistsRecords, albums: albumsRecords});
       });
     });
   });

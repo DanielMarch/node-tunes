@@ -20,5 +20,5 @@ block content
           td: audio(src='/audios/#{song.name}/#{song.song}', type='audio/mp3', controls=true)
           td= song.name
           td= song.genre
-          td= song.albumID
-          td= song.artistID
+          td= song.album.name
+          td= song.artist.name
