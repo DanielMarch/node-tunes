@@ -67,9 +67,9 @@ exports.namesort = (req, res)=>{
     albums.find().toArray((e, alb)=>{
       artists.find().toArray((e, art)=>{
         s = s.map(song => {
-          console.log('*********************************');
-          console.log(s);
-          console.log(song);
+          // console.log('*********************************');
+          // console.log(s);
+          // console.log(song);
           return song;
         });
         res.render('songs/index', {albums: alb, artists: art, songs: s, title: 'Song List'});
